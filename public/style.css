@@ -300,6 +300,12 @@ tbody tr:last-child td{border-bottom:none}
 .catcard .cc-i{font-size:1.6rem;margin-bottom:.375rem}
 .catcard .cc-t{font-size:.73rem;font-weight:600}
 
+/* ─── TAB BAR (Reports) ─── */
+.tab-bar{display:flex;gap:.25rem;border-bottom:1px solid var(--wire);margin-bottom:1.25rem;padding-bottom:0;flex-wrap:wrap}
+.tab-btn{padding:.5rem .875rem;font-size:.8rem;font-weight:600;color:var(--chalk2);background:none;border:none;border-bottom:2px solid transparent;cursor:pointer;transition:all .15s;border-radius:6px 6px 0 0}
+.tab-btn:hover{color:var(--chalk);background:rgba(255,255,255,.04)}
+.tab-btn.on{color:var(--spark);border-bottom-color:var(--spark);background:rgba(0,212,255,.06)}
+
 /* ─── RESPONSIVE ─── */
 @media(max-width:900px){.auth-shell{grid-template-columns:1fr}.auth-left{display:none}.main{margin-left:0}.sidebar{transform:translateX(-100%)}.sidebar.open{transform:none}.g2,.g3{grid-template-columns:1fr}.frow,.frow3{grid-template-columns:1fr}}
 @media(max-width:600px){.stats-grid{grid-template-columns:1fr 1fr}.page{padding:1rem}}

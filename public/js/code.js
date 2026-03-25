@@ -101,6 +101,7 @@ async function buildShell(role){
     {p:'request-new',i:'➕',l:'แจ้งซ่อมใหม่',r:['user','manager','admin']},
     {sec:'การจัดการ',r:['technician','manager','admin']},
     {p:'materials',i:'📦',l:'คลังวัสดุ',r:['technician','manager','admin']},
+    {p:'reports',i:'📊',l:'รายงาน & Export',r:['manager','admin']},
     {sec:'ทั่วไป',r:['user','technician','manager','admin']},
     {p:'track',i:'🔍',l:'ติดตามงาน',r:['user','technician','manager','admin']},
     {p:'users',i:'👥',l:'จัดการผู้ใช้',r:['admin','manager']},
@@ -189,7 +190,7 @@ function renderCurrentPage() {
   if(l)l.classList.add('on');
   if(window.innerWidth<=900)document.getElementById('sidebar')?.classList.remove('open');
 
-  const titles={dashboard:'📊 ภาพรวมระบบ','requests-list':'🔧 รายการแจ้งซ่อม','request-new':'➕ แจ้งซ่อมใหม่','request-detail':'📋 รายละเอียดงานซ่อม',materials:'📦 คลังวัสดุ',users:'👥 จัดการผู้ใช้',track:'🔍 ติดตามงาน',profile:'👤 โปรไฟล์'};
+  const titles={dashboard:'📊 ภาพรวมระบบ','requests-list':'🔧 รายการแจ้งซ่อม','request-new':'➕ แจ้งซ่อมใหม่','request-detail':'📋 รายละเอียดงานซ่อม',materials:'📦 คลังวัสดุ',reports:'📊 รายงาน & Export',users:'👥 จัดการผู้ใช้',track:'🔍 ติดตามงาน',profile:'👤 โปรไฟล์'};
   const tEl=document.getElementById('page-title');
   if(tEl) tEl.textContent=titles[vp]||'ระบบแจ้งซ่อม';
 
@@ -202,6 +203,7 @@ function renderCurrentPage() {
     pageRequestDetail(id);
   }
   else if(vp==='materials' && typeof pageMaterials==='function') pageMaterials();
+  else if(vp==='reports' && typeof pageReports==='function') pageReports();
   else if(vp==='users' && typeof pageUsers==='function') pageUsers();
   else if(vp==='track' && typeof pageTrack==='function') pageTrack();
   else if(vp==='profile' && typeof pageProfile==='function') pageProfile();

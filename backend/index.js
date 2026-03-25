@@ -44,6 +44,7 @@ app.use('/api/locations', otherRoutes.locationRouter);
 app.use('/api/evaluations', otherRoutes.evalRouter);
 app.use('/api/dashboard', otherRoutes.dashRouter);
 app.use('/api/notifications', otherRoutes.notifRouter);
+app.use('/api/reports', otherRoutes.reportRouter);
 
 app.use((err, req, res, next) => {
   console.error(err);
