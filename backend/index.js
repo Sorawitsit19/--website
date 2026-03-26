@@ -96,6 +96,7 @@ app.use('/api/reports', otherRoutes.reportRouter);
 app.use('/api/schedule', otherRoutes.scheduleRouter);
 app.use('/api/notification-settings', otherRoutes.notifSettingsRouter);
 app.use('/api/audit-logs', otherRoutes.auditLogRouter);
+app.use('/api/system', otherRoutes.systemRouter);
 
 
 // ── Global error handler (no stack trace in production) ─────────────────────
